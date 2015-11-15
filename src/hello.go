@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -80,6 +81,8 @@ func main(){
 	sumTest()
 
 	testFib()
+
+	testClosure()
 }
 
 func myDefer(){
@@ -366,3 +369,5 @@ func testFib(){
 		fmt.Println(i)
 	}
 }
+
+
