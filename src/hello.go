@@ -8,8 +8,13 @@ import (
 	"os"
 	"time"
 	"io"
+	"strconv"
 )
 var c,java,python bool
+
+type Stringer interface{
+	String() string
+}
 
 func add(x int,y int)int{
 	return x+y;
@@ -30,59 +35,89 @@ func pow(x,n,lim float64)float64{
 }
 
 func main(){
-	fmt.Println(add(12,13))
-	a:="haha";
-	b:="gogo";
-	a,b=swap(a,b)
-	fmt.Println(a,b)
-	fmt.Println(c)
+//	fmt.Println(add(12,13))
+//	a:="haha";
+//	b:="gogo";
+//	a,b=swap(a,b)
+//	fmt.Println(a,b)
+//	fmt.Println(c)
+//
+//	sum:=0
+//	for i:=0;i<10;i++{
+//		sum+=i
+//	}
+//
+//	fmt.Println(sum)
+//
+//	fmt.Println(pow(2,2,10))
+//
+//	myDefer()
+//
+//	myDeferStatck()
+//
+//	point()
+//
+//	structTest()
+//
+//	array()
+//
+//	slice()
+//
+//	makeSlice()
+//
+//	rangePrint()
+//
+//	mapPrint()
+//
+//	wordCount()
+//
+//	adderTest()
+//
+//	MethodReceiver()
+//
+//	TestInterface()
+//
+//	testError()
+//
+//	stringReader()
+//
+//	goTest()
 
-	sum:=0
-	for i:=0;i<10;i++{
-		sum+=i
+//	sumTest()
+
+//	testFib()
+
+//	testClosure()111
+
+//	aa :=CC{121111}
+//	printInterface(aa)
+//
+//	var bb Stringer=new(CC)
+//	printInterface(bb.String())
+//	test()
+	networkTest()
+}
+
+type CC struct{
+	a int
+}
+
+func (cc *CC) String() string{
+	return strconv.Itoa(cc.a)
+}
+
+func printInterface(args ... interface{}){
+
+	for _,arg:=range args{
+
+		switch arg.(type){
+		default:
+			if v,ok:=arg.(Stringer);ok{
+				val:=v.String();
+				fmt.Println(val)
+			}
+		}
 	}
-
-	fmt.Println(sum)
-
-	fmt.Println(pow(2,2,10))
-
-	myDefer()
-
-	myDeferStatck()
-
-	point()
-
-	structTest()
-
-	array()
-
-	slice()
-
-	makeSlice()
-
-	rangePrint()
-
-	mapPrint()
-
-	wordCount()
-
-	adderTest()
-
-	MethodReceiver()
-
-	TestInterface()
-
-	testError()
-
-	stringReader()
-
-	goTest()
-
-	sumTest()
-
-	testFib()
-
-	testClosure()
 }
 
 func myDefer(){
